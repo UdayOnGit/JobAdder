@@ -8,5 +8,20 @@
 			<td>Candidate Count</td>
 			<td>{{getCandidateCount()}}</td>
 		</tr>
+		<ng-container *ngFor='let job of jobs; '>
+			<tr>
+				<td>{{job.jobId}}</td>
+				<td>{{job.name}}</td>
+				<td>{{job.company}}</td>
+				<td>{{job.skills}}</td>
+			</tr>
+		</ng-container>
+		<ng-container *ngFor='let candidate of candidates; '>
+			<tr>
+				<td>{{candidate.candidateId}}</td>
+				<td>{{candidate.name}}</td>
+				<td>{{candidate.skillTags}}</td>
+			</tr>
+		</ng-container>
 	</tbody>
 </table>

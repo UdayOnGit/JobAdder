@@ -24,9 +24,14 @@ export class MatchComponent implements OnInit {
 				(error) => { console.error(error); });
 	}
 
+	matchCandidateToJob(): void {
+
+	}
+
 	getJobCount(): number {
 		return this.jobs.length;
 	}
+
 	getCandidateCount(): number {
 		return this.candidates.length;
 	}

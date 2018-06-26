@@ -23,6 +23,8 @@ var MatchComponent = (function () {
         this._candidateService.getCandidates()
             .subscribe(function (candidateData) { return _this.candidates = candidateData; }, function (error) { console.error(error); });
     };
+    MatchComponent.prototype.matchCandidateToJob = function () {
+    };
     MatchComponent.prototype.getJobCount = function () {
         return this.jobs.length;
     };
