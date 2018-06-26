@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
-var JobService = (function () {
-    function JobService(_http) {
-        this._http = _http;
+var jobs_service_1 = require("../Jobs/jobs.service");
+var MatchComponent = (function () {
+    function MatchComponent(_jobService) {
+        this._jobService = _jobService;
     }
-    JobService.prototype.getJobs = function () {
-        return this._http.get('http://private-76432-jobadder1.apiary-mock.com/jobs/')
-            .map(function (response) { return response.json(); });
+    MatchComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._jobService.getJobs()
+            .subscribe(function (JobsData) { return _this.jobs = JobsData; });
     };
-    return JobService;
+    return MatchComponent;
 }());
-JobService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], JobService);
-exports.JobService = JobService;
-//# sourceMappingURL=jobs.service.js.map
+MatchComponent = __decorate([
+    core_1.Component({
+        selector: 'list-match',
+        templateUrl: 'app/Employee/match.component.html',
+    }),
+    __metadata("design:paramtypes", [jobs_service_1.JobService])
+], MatchComponent);
+exports.MatchComponent = MatchComponent;
+//# sourceMappingURL=Match.component.js.map
