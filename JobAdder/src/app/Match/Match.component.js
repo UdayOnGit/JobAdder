@@ -23,6 +23,12 @@ var MatchComponent = (function () {
         this._candidateService.getCandidates()
             .subscribe(function (candidateData) { return _this.candidates = candidateData; }, function (error) { console.error(error); });
     };
+    MatchComponent.prototype.getJobCount = function () {
+        return this.jobs.length;
+    };
+    MatchComponent.prototype.getCandidateCount = function () {
+        return this.candidates.length;
+    };
     return MatchComponent;
 }());
 MatchComponent = __decorate([
