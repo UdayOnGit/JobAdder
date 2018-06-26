@@ -98,6 +98,9 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\candidate.service.ts" />
+    <TypeScriptCompile Include="src\app\Jobs\Job.ts" />
+    <TypeScriptCompile Include="src\app\Jobs\jobs.service.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>
