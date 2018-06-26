@@ -23,6 +23,11 @@ var MatchComponent = (function () {
         this._candidateService.getCandidates()
             .subscribe(function (candidateData) { return _this.candidates = candidateData; }, function (error) { console.error(error); });
     };
+    // This method is responsible to determine the best candidate match for a job
+    // Although I am thinking in line of using the LINQ intersect logic to determine which candidates
+    // skills match the most with the job skills, below logic is incomplete and throws runtime errors.
+    // An assumption is made that in case multiple candidates have the similar skills matching the job,
+    // first candidate will be matched against the job
     MatchComponent.prototype.matchCandidateToJob = function () {
         var _this = this;
         this.jobs.forEach(function (element) {
@@ -43,7 +48,7 @@ var MatchComponent = (function () {
     MatchComponent.prototype.intersect = function (a, b) {
         var t;
         if (b.length > a.length)
-            t = b, b = a, a = t; // indexOf to loop over shorter
+            t = b, b = a, a = t;
         return a.filter(function (e) {
             return b.indexOf(e) > -1;
         });

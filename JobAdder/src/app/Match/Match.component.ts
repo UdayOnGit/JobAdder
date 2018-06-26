@@ -25,6 +25,11 @@ export class MatchComponent implements OnInit {
 			(error) => { console.error(error); });
 	}
 
+	// This method is responsible to determine the best candidate match for a job
+	// Although I am thinking in line of using the LINQ intersect logic to determine which candidates
+	// skills match the most with the job skills, below logic is incomplete and throws runtime errors.
+	// An assumption is made that in case multiple candidates have the similar skills matching the job,
+	// first candidate will be matched against the job
 	matchCandidateToJob(): void {
 		this.jobs.forEach((element) => {
 			var jobSkills = element.skills;
@@ -44,7 +49,7 @@ export class MatchComponent implements OnInit {
 
 	intersect(a: string[], b: string[]): string[] {
 	var t;
-	if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+	if (b.length > a.length) t = b, b = a, a = t;
 	return a.filter(function (e) {
 		return b.indexOf(e) > -1;
 	});
