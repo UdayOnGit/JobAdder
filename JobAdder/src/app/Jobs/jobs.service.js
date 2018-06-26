@@ -16,7 +16,7 @@ var JobService = (function () {
         this._http = _http;
     }
     JobService.prototype.getJobs = function () {
-        return this._http.get('http://private-76432-jobadder1.apiary-mock.com/jobs/')
+        return this._http.get('http://private-76432-jobadder1.apiary-mock.com/jobs')
             .map(function (response) { return response.json(); });
     };
     return JobService;

@@ -9,7 +9,7 @@ export class JobService {
 	constructor(private _http: Http) { }
 
 	getJobs(): Observable<IJob[]> {
-		return this._http.get('http://private-76432-jobadder1.apiary-mock.com/jobs/')
+		return this._http.get('http://private-76432-jobadder1.apiary-mock.com/jobs')
 			.map((response: Response) => <IJob[]>response.json());
 	}
 }

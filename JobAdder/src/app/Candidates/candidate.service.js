@@ -15,7 +15,7 @@ var CandidateService = (function () {
     function CandidateService(_http) {
         this._http = _http;
     }
-    CandidateService.prototype.getJobs = function () {
+    CandidateService.prototype.getCandidates = function () {
         return this._http.get('http://private-76432-jobadder1.apiary-mock.com/candidates')
             .map(function (response) { return response.json(); });
     };

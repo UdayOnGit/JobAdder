@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 export class CandidateService {
 	constructor(private _http: Http) { }
 
-	getJobs(): Observable<ICandidate[]> {
+	getCandidates(): Observable<ICandidate[]> {
 		return this._http.get('http://private-76432-jobadder1.apiary-mock.com/candidates')
 			.map((response: Response) => <ICandidate[]>response.json());
 	}
