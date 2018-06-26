@@ -99,7 +99,8 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\candidate.service.ts" />
+    <TypeScriptCompile Include="src\app\Candidates\candidate.service.ts" />
+    <TypeScriptCompile Include="src\app\Candidates\Candidate.ts" />
     <TypeScriptCompile Include="src\app\Jobs\Job.ts" />
     <TypeScriptCompile Include="src\app\Match\Match.component.ts" />
     <TypeScriptCompile Include="src\app\Jobs\jobs.service.ts" />

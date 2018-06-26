@@ -1,10 +1,10 @@
 ﻿export interface IJob {
-	jobId: string;
+	jobId: number;
 	name: string;
 	company: string;
 	skills: string[];
 }
 
 export class Job implements IJob {
-	constructor(public jobId: string, public name: string, public company: string, public skills: string[]) { }
+	constructor(public jobId: number, public name: string, public company: string, public skills: string[]) { }
 }
