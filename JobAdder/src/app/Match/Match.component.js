@@ -24,6 +24,29 @@ var MatchComponent = (function () {
             .subscribe(function (candidateData) { return _this.candidates = candidateData; }, function (error) { console.error(error); });
     };
     MatchComponent.prototype.matchCandidateToJob = function () {
+        var _this = this;
+        this.jobs.forEach(function (element) {
+            var jobSkills = element.skills;
+            var numberOfMatches = 0;
+            var matchedCandidate;
+            _this.candidates.forEach(function (candidate) {
+                var matchedSkills = (jobSkills.filter(function (value) { return -1 !== candidate.skillTags.indexOf(value); })).length;
+                if (matchedSkills > numberOfMatches) {
+                    matchedCandidate = candidate;
+                    numberOfMatches = matchedSkills;
+                }
+            });
+            console.log(element.name + ":" + matchedCandidate.name);
+            _this.matches.push(element.name + ":" + matchedCandidate.name);
+        });
+    };
+    MatchComponent.prototype.intersect = function (a, b) {
+        var t;
+        if (b.length > a.length)
+            t = b, b = a, a = t; // indexOf to loop over shorter
+        return a.filter(function (e) {
+            return b.indexOf(e) > -1;
+        });
     };
     MatchComponent.prototype.getJobCount = function () {
         return this.jobs.length;
